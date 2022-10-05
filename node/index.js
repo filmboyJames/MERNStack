@@ -10,4 +10,13 @@ console.log("2+2 =", add(2,2));
 
 const getPoke = require("./poke.js");
 
-getPoke();
+//getPoke();
+
+// const { startDate } = require("./now.js");
+
+// console.log(startDate);
+
+const cowgo = require("./cow.js");
+
+console.log(cowgo.cowgo("This is supposed to be fun","<oo>","~"));
+console.log(cowgo.cowthink);
