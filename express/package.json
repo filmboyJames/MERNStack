@@ -1,14 +1,16 @@
 {
-  "name": "npm-demo",
+  "name": "express",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js",
-    "mycow": "cowsay -e xx -T H -f dalek-shooting 'Exterminate the HTTP request!'"
+    "start": "node index.js"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
 }
