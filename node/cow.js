@@ -4,9 +4,9 @@ const cowgo = (speech,eyes,tongue) => cows.say({
     text: speech,
     e : eyes,
     T : tongue,
-    //f : "USA",
-    d: true
-    //'r' : true
+    //f : "USA", //Specific cows
+    //d: true //Different modes, d=dead for example
+    'r' : true //random cow
 });
 
 const cowthink = cows.think;
