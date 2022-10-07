@@ -38,7 +38,7 @@ app.delete("/removeDoctor/:id", (req, res, next) => {
 });
 
 app.post("/createDoctor", (req, res, next) => {
-    if(!req.body.name) return next("WRONG");
+    if(!req.body.name) return next("No body given - YOU DID IT WRONG");
     const name = req.body.name;
     console.log("name variable is ", name);
     doctors.push(name);
