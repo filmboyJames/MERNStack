@@ -1,10 +1,9 @@
 const router = require('express').Router();
+const { doctorModel } = require("../db");
 
-let doctors = ['William', 'Patrick', 'Jon', 'Tom', 'Peter', 'Colin', 'Sylvester', 'Paul', 'John', 'Christopher', 'David', 'Matt', 'Peter', 'Jodie'];
+// let doctors = ['William', 'Patrick', 'Jon', 'Tom', 'Peter', 'Colin', 'Sylvester', 'Paul', 'John', 'Christopher', 'David', 'Matt', 'Peter', 'Jodie'];
 
-router.get("/getAll", (req, res) => {
-    res.send(doctors);
-});
+router.get("/getAll", (req, res) => doctorModel.find({}).then(results => res.send(results)).catch(err => next(err)));
 
 router.get("/getDoctor/:id", (req, res, next) => {
     if(req.params.id>doctors.length) return next({status: 404, message: "This Doctor doesn't exist yet!"});

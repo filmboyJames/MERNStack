@@ -1,24 +1,22 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
-mongoose.connect("mongodb://localhost:27017/tdp_db",{
-    useNewUrlParser: true;
+mongoose.connect("mongodb://localhost:27017/doctors",{
+    useNewUrlParser: true
 });
 
 //makes a new Schema
-const duckSchema = new mongoose.Schema({
-    disposition: {
+const doctorSchema = new mongoose.Schema({
+    name: {
         type: String,
         require: true
-        }
-    colour: String,
-    name {
-        type: String,
-        require: true
-    }
-})
+        },
+    startYear: Number,
+    endYear: Number
+});
 
-const duckModel = mongoose.model("duck", duckSchema); //object with all the mongo functions, and this is what is exported to allow the functions to be used
+//will create a PLURALISED version
+const doctorModel = mongoose.model("doctor", doctorSchema); //object with all the mongo functions, and this is what is exported to allow the functions to be used
 
 module.exports = {
-    duckModel
+    doctorModel
 }
