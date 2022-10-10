@@ -14,6 +14,8 @@ const doctorSchema = new mongoose.Schema({
     endYear: Number
 });
 
+
+
 //will create a PLURALISED version
 const doctorModel = mongoose.model("doctor", doctorSchema); //object with all the mongo functions, and this is what is exported to allow the functions to be used
 
