@@ -17,3 +17,8 @@ const duckSchema = new mongoose.Schema({
     }
 })
 
+const duckModel = mongoose.model("duck", duckSchema); //object with all the mongo functions, and this is what is exported to allow the functions to be used
+
+module.exports = {
+    duckModel
+}
