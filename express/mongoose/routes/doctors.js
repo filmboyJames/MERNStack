@@ -9,7 +9,7 @@ router.get("/getDoctor/:id", (req, res, next) => doctorModel.find({ 'name': req.
 
 router.delete("/removeDoctor/:id", (req, res, next) => doctorModel.deleteOne({ 'name': req.params.id }).then(results => res.status(201).send(results)).catch(err => next(err)));
 
-router.put("/updateDoctor/:oldDoctor/:newDoctor", (req, res, next) => doctorModel.updateOne({ 'name': req.params.oldDoctor }, { $set: { 'name': req.params.newDoctor } }).then(results => res.status(201).send(results)).catch(err => next(err)));
+router.put("/updateDoctorName/:oldDoctor/:newDoctor", (req, res, next) => doctorModel.updateOne({ 'name': req.params.oldDoctor }, { $set: { 'name': req.params.newDoctor } }).then(results => res.status(201).send(results)).catch(err => next(err)));
 
 // router.patch("/updateDoctorElement/:oldDoctor/:newDoctor", (req, res, next) => doctorModel.updateOne({ 'name': req.params.oldDoctor }, { $set: { 'name': req.params.newDoctor } }).then(results => res.status(201).send(results)).catch(err => next(err)));
 
@@ -24,11 +24,11 @@ router.post("/createDoctor", async (req, res, next) => {
     }
 });
 
-router.patch("/updateDoctorElement/:oldDoctor/:newDoctor", async (req, res, next) => {
+router.patch("/updateDoctorElement/:oldDoctorId", async (req, res, next) => {
     if(0) return next({status:400, message: "Doctor does not exist to update"});
     try{
-        const result = await doctorModel.findByIdAndUpdate(req.params.oldDoctor, req.params.newDoctor)
-        const newDoctor = await doctorModel.findById(req.params.newDoctor);
+        const result = await doctorModel.findByIdAndUpdate(req.params.oldDoctorId, req.body, {upsert: true})
+        const newDoctor = await doctorModel.findById(req.params.query);
         res.send(newDoctor);
     } catch(err) {
         return next(err);
