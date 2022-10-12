@@ -24,10 +24,10 @@ router.post("/createDoctor", async (req, res, next) => {
     }
 });
 
-router.patch("/updateDoctorElement/:oldDoctorId", async (req, res, next) => {
+router.patch("/updateDoctorElement/:element/:oldDoctor", async (req, res, next) => {
     if(0) return next({status:400, message: "Doctor does not exist to update"});
     try{
-        const result = await doctorModel.findByIdAndUpdate(req.params.oldDoctorId, req.body, {upsert: true})
+        //const result = await doctorModel.updateOne({ 'name': req.params.oldDoctor }, { $set: { 'name': req.params.newDoctor }});
         const newDoctor = await doctorModel.findById(req.params.query);
         res.send(newDoctor);
     } catch(err) {
