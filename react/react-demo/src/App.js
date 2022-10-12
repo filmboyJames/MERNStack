@@ -1,7 +1,32 @@
 import logo from './logo.svg';
 import './App.css';
 
+const SomeApp = () => {
+
+  const address = {
+      forename: "Nick",
+      surname: "Johnson",
+      line1: "QA Consulting",
+      line2: "Anchorage 1",
+      city: "Manchester",
+      zip: "M50 3YL"
+  }
+
+  return (
+      <div>
+          <h1>{address.forename}</h1>
+          <h1>{address.surname}</h1>
+          <h1>{address.line1}</h1>
+          <h1>{address.line2}</h1>
+          <h1>{address.city}</h1>
+          <h1>{address.zip}</h1>
+      </div>
+  );
+};
+//export default SomeApp;
+
 function App() {
+ 
   return (
     <div className="App">
       <header className="App-header">
@@ -9,8 +34,19 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload. If you really want to.
         </p>
+        <ol>
+          <li>
+            I'm making a list
+          </li>
+          <li>
+            I'm checking it twice
+          </li>
+        </ol>
         <p>
           I'm writing some words to appear on a page
+        </p>
+        <p>
+          {SomeApp()};
         </p>
         <a
           className="App-link"
@@ -20,7 +56,12 @@ function App() {
         >
           Learn React
         </a>
-        <a href="https:google.com">
+        <a
+          className="App-link"
+          href="https:google.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Link to Google
         </a>
       </header>
