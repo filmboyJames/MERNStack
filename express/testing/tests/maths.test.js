@@ -5,8 +5,8 @@ describe("Maths tests", () => { //set of tests
     it("should equal 2", () => { //single test
         expect(sum(1, 1)).to.equal(2);
     });
-    it.skip(("should fail"),() => {
-        expect(sum(1,1)).to.equal(3);
-    });
+    // it.skip(("should fail"),() => {
+    //     expect(sum(1,1)).to.equal(3);
+    // });
     
 });
