@@ -4,12 +4,11 @@ import './App.css';
 const SomeApp = () => {
 
   const address = {
-      forename: "Nick",
-      surname: "Johnson",
-      line1: "QA Consulting",
-      line2: "Anchorage 1",
-      city: "Manchester",
-      zip: "M50 3YL"
+      forename: "James",
+      surname: "Stewart",
+      line1: "Nationwide",
+      line2: "The Shed",
+      city: "Edinburgh"
   }
 
   return (
