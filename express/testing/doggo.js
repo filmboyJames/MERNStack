@@ -1,23 +1,21 @@
-module.exports = {
-    factorial
-}
+function doggo(num) {
+    const positions = [];
+    for(i=1; i<=100; i++){
+        if(i === num) continue;
+        
+        let placeString = "" +i;
 
-function factorial(num) {
-    let divider = 1;
-    let numDivide = num;
-    while (numDivide > 1) {
-        divider++;
-        if (numDivide % divider !== 0) {
-            return "NOT A";
-        }
-        else {
-            numDivide = numDivide / divider;
-        }
+        if(i % 10 ===1 && i!= 11) placeString += "st";
+        else if (i % 10 === 2 && i!= 12) placeString += "nd";
+        else if (i % 10 === 3 && i!= 13) placeString += "rd";
+        else placeString += "th";
+
+        positions.push(placeString);
     }
-    return divider;
+
+    return positions;
 }
 
-console.log("3628800 is ",factorial(3628800), "!");
-console.log("479001600 is ",factorial(479001600), "!");
-console.log("6 is ",factorial(6), "!");
-console.log("18 is ",factorial(18), "!");
+console.log(doggo(44));
+
+module.exports = doggo;
