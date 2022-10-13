@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import Person from './Person';
-import MyComponent from './MyComponent';
+import MyComponent from './Components/Props/MyComponent';
 import Products from './Components/Props/Products';
 import Parent from './Components/Props/Parent';
 import PropComp from './Components/Props/Hello';
@@ -9,12 +9,10 @@ import PropComp from './Components/Props/Hello';
 function App() {
  
   return (
-
-
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
+        {/* <p>
           Edit <code>src/App.js</code> and save to reload. If you really want to.
         </p>
         <ol>
@@ -27,7 +25,7 @@ function App() {
         </ol>
         <p>
           I'm writing some words to appear on a page
-        </p>
+        </p> */}
         <div>
           <Person/>
           <MyComponent/>
@@ -39,7 +37,7 @@ function App() {
           <PropComp/>
           <MyComponent/>
         </div>
-        <a
+        {/* <a
           className="App-link"
           href="https://reactjs.org"
           target="_blank"
@@ -54,7 +52,7 @@ function App() {
           rel="noopener noreferrer"
         >
           Link to Google
-        </a>
+        </a> */}
       </header>
     </div>
   );

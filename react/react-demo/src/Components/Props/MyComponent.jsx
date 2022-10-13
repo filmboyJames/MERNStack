@@ -1,4 +1,4 @@
-import ComponentWithProps from './Components/Props/ComponentWithProps'
+import ComponentWithProps from './ComponentWithProps'
 
 const MyComponent = () => {
     return (
