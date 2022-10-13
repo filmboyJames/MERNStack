@@ -5,6 +5,10 @@ import MyComponent from './Components/Props/MyComponent';
 import Products from './Components/Props/Products';
 import Parent from './Components/Props/Parent';
 import PropComp from './Components/Props/Hello';
+import MilesAhead from './Components/States/MilesAhead';
+import Form from './Components/States/Form';
+import TrueFalse from './Components/States/TrueFalse'
+import Counter from './Components/States/Counter'
 
 function App() {
  
@@ -27,6 +31,10 @@ function App() {
           I'm writing some words to appear on a page
         </p> */}
         <div>
+        <Counter/>
+        <TrueFalse/>
+        {/* <Form/> */}
+        <MilesAhead/>
           <Person/>
           <MyComponent/>
           <Products
@@ -36,6 +44,7 @@ function App() {
           <Parent/>
           <PropComp/>
           <MyComponent/>
+          
         </div>
         {/* <a
           className="App-link"
