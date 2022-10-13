@@ -1,28 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
-
-const SomeApp = () => {
-
-  const address = {
-      forename: "James",
-      surname: "Stewart",
-      line1: "Nationwide",
-      line2: "The Shed",
-      city: "Edinburgh"
-  }
-
-  return (
-      <div>
-          <h1>{address.forename}</h1>
-          <h1>{address.surname}</h1>
-          <h1>{address.line1}</h1>
-          <h1>{address.line2}</h1>
-          <h1>{address.city}</h1>
-          <h1>{address.zip}</h1>
-      </div>
-  );
-};
-//export default SomeApp;
+import Person from './Person';
+import MyComponent from './MyComponent';
+import Dice from './Dice';
 
 function App() {
  
@@ -44,9 +24,11 @@ function App() {
         <p>
           I'm writing some words to appear on a page
         </p>
-        <p>
-          {SomeApp()};
-        </p>
+        <div>
+          <Person/>
+          <MyComponent/>
+          <Dice/>
+        </div>
         <a
           className="App-link"
           href="https://reactjs.org"
