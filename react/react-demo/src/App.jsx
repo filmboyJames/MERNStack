@@ -2,11 +2,15 @@ import logo from './logo.svg';
 import './App.css';
 import Person from './Person';
 import MyComponent from './MyComponent';
-import Dice from './Dice';
+import Products from './Components/Props/Products';
+import Parent from './Components/Props/Parent';
+import PropComp from './Components/Props/Hello';
 
 function App() {
  
   return (
+
+
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
@@ -27,7 +31,13 @@ function App() {
         <div>
           <Person/>
           <MyComponent/>
-          <Dice/>
+          <Products
+          name="Pepsi"
+          price={1.50}
+          description="another drink"/>
+          <Parent/>
+          <PropComp/>
+          <MyComponent/>
         </div>
         <a
           className="App-link"
