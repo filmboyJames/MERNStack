@@ -1,52 +1,58 @@
 import logo from './logo.svg';
 import './App.css';
-import Person from './Person';
+import Person from './Components/Props/Person';
+import Person1 from './Components/Props/Person1';
 import MyComponent from './Components/Props/MyComponent';
 import Products from './Components/Props/Products';
 import Parent from './Components/Props/Parent';
 import PropComp from './Components/Props/Hello';
 import MilesAhead from './Components/States/MilesAhead';
 import Form from './Components/States/Form';
-import TrueFalse from './Components/States/TrueFalse'
-import Counter from './Components/States/Counter'
+import TrueFalse from './Components/States/TrueFalse';
+import Counter from './Components/States/Counter';
+import Converter from './Components/States/Converter';
+import people from './people.json'; //Needs files ending!
+import Content from './Components/Props/Content';
+import Subcontent from './Components/Props/Subcontent';
+import LoginControl from './Components/Props/LoginControl';
+
 
 function App() {
- 
+
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        {/* <p>
-          Edit <code>src/App.js</code> and save to reload. If you really want to.
-        </p>
-        <ol>
-          <li>
-            I'm making a list
-          </li>
-          <li>
-            I'm checking it twice
-          </li>
-        </ol>
-        <p>
-          I'm writing some words to appear on a page
-        </p> */}
         <div>
-        <Counter/>
-        <TrueFalse/>
-        {/* <Form/> */}
-        <MilesAhead/>
-          <Person/>
-          <MyComponent/>
-          <Products
-          name="Pepsi"
-          price={1.50}
-          description="another drink"/>
-          <Parent/>
-          <PropComp/>
-          <MyComponent/>
           
+          <Counter />
+          <LoginControl/>
+          
+          
+          <Subcontent/>
+          <Content/>
+          <Form />
+          {
+            people.map(person => {
+              return <Person1 key={person.name + person.age} name={person.name} age={person.age} job={person.job} />
+            })
+          }
+          <Converter />
+          <TrueFalse />
+          <Form />
+          <MilesAhead />
+          <Person />
+          <MyComponent />
+          <Products
+            name="Pepsi"
+            price={1.50}
+            description="another drink" />
+          <Parent />
+          <PropComp />
+          <MyComponent />
+
         </div>
-        {/* <a
+        <a
           className="App-link"
           href="https://reactjs.org"
           target="_blank"
@@ -61,7 +67,7 @@ function App() {
           rel="noopener noreferrer"
         >
           Link to Google
-        </a> */}
+        </a>
       </header>
     </div>
   );

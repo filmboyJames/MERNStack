@@ -2,29 +2,43 @@ import { useState } from 'react';
 
 function Counter() {
 
-    const [count, setCount] = useState();
+    const [counter, setCounter] = useState({
+        count:0,
+        history: []
+    });
 
-    const history = [];
+    const handleChange = (event) => {
+        const newCount = parseInt(event.target.value);
+        const newHistory = counter.history;
+        newHistory.push(newCount);
+        setCounter({
+            count: newCount,
+            history: newHistory
+        })
+    }
 
-    // const handleChange = (event) => {
-    //     setCount(event.target.value);
-    //     history.push(count);
-    //     console.log(history);
-    // }
-
-    const addHistory = () => {
-        setCount(parseInt(count) + 1);
-        history.push(count);
-        console.log(history);        
+    const handleClick = (event) => {
+        console.log(event);
+        const countChange = parseInt(event.target.id);
+        const newCount = counter.count + countChange;
+        const newHistory = counter.history;
+        newHistory.push(newCount);
+        setCounter({
+            count: newCount,
+            history: newHistory
+        })     
     }
 
     return (
         <>
-            <input type="number" value={count}  />
-            <button onClick={addHistory}>Increment the Count my good fellow</button>
-            <button onClick={() => setCount(parseInt(count) - 1)}>Decrement the Count my good fellow</button>
-            <button onClick={() => setCount(42)}>Reset the Count to the Meaning of Life my good fellow</button>
-            <p>This is the history {history.map(item => <div>{item}</div>)}</p>
+            <input type="number" value={counter.count} onClick={handleChange} />
+            <br></br>
+            <button onClick={handleClick} id="1" >Increment the number my good man</button>
+            <br></br>
+            <button onClick={(handleClick) } id="-1">Be a good chap and decrement the number if you would</button>
+            <br></br>
+            <button onClick={() => setCounter(42)}>Reset the Count to the Meaning of Life my good fellow</button>
+            <p>This is the history {counter.history.toString()}</p>
         </>
     )
 }
