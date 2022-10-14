@@ -37,8 +37,12 @@ function Counter() {
             <br></br>
             <button onClick={(handleClick) } id="-1">Be a good chap and decrement the number if you would</button>
             <br></br>
-            <button onClick={() => setCounter(42)}>Reset the Count to the Meaning of Life my good fellow</button>
-            <p>This is the history {counter.history.toString()}</p>
+            {/* <button onClick={() => setCounter(42)}>Reset the Count to the Meaning of Life my good fellow</button> */}
+            <div>
+                {
+                    counter.history.map(num=> <p>{num}</p>)
+                }
+                </div>
         </>
     )
 }

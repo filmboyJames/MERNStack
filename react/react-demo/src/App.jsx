@@ -1,20 +1,21 @@
 import logo from './logo.svg';
 import './App.css';
-import Person from './Components/Props/Person';
-import Person1 from './Components/Props/Person1';
-import MyComponent from './Components/Props/MyComponent';
-import Products from './Components/Props/Products';
-import Parent from './Components/Props/Parent';
-import PropComp from './Components/Props/Hello';
-import MilesAhead from './Components/States/MilesAhead';
-import Form from './Components/States/Form';
-import TrueFalse from './Components/States/TrueFalse';
-import Counter from './Components/States/Counter';
-import Converter from './Components/States/Converter';
-import people from './people.json'; //Needs files ending!
-import Content from './Components/Props/Content';
-import Subcontent from './Components/Props/Subcontent';
-import LoginControl from './Components/Props/LoginControl';
+// import Person from './Components/Props/Person';
+// import Person1 from './Components/Props/Person1';
+// import MyComponent from './Components/Props/MyComponent';
+// import Products from './Components/Props/Products';
+// import Parent from './Components/Props/Parent';
+// import PropComp from './Components/Props/Hello';
+// import MilesAhead from './Components/States/MilesAhead';
+// import Form from './Components/States/Form';
+// import TrueFalse from './Components/States/TrueFalse';
+// import Counter from './Components/States/Counter';
+// import Converter from './Components/States/Converter';
+// import people from './people.json'; //Needs files ending!
+// import Content from './Components/Props/Content';
+// import Subcontent from './Components/Props/Subcontent';
+// import LoginControl from './Components/Props/LoginControl';
+import Game from './Components/States/Game'
 
 
 function App() {
@@ -24,9 +25,9 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <div>
-          
-          <Counter />
-          <LoginControl/>
+          <Game/>
+          {/* <Counter /> */}
+          {/* <LoginControl/>
           
           
           <Subcontent/>
@@ -49,7 +50,7 @@ function App() {
             description="another drink" />
           <Parent />
           <PropComp />
-          <MyComponent />
+          <MyComponent /> */}
 
         </div>
         <a

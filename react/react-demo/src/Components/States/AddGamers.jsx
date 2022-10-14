@@ -1,8 +1,8 @@
-const AddGamers = () => {
+const AddGamers = ({submitHandler, newPlayer, handleAdd}) => {
     return(
-        <form>
-            <input type="text" placeholder="Enter name:"/>
-            <button type="button">Add Player</button>
+        <form onSubmit={submitHandler}>
+            <input type="text" placeholder="Enter name:" onChange={newPlayer}/>
+            <button type="button" onClick={handleAdd}>Add Player</button>
         </form>
     )
 }
