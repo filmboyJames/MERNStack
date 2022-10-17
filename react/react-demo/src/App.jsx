@@ -17,7 +17,7 @@ import './App.css';
 // import LoginControl from './Components/Props/LoginControl';
 // import Game from './Components/States/Game'
 // import EmployeeInfo from './Request'
-// import FilmRequest from './Components/FilmRequest'
+import FilmRequest from './Components/FilmRequest'
 import FilmDisplay from './Components/FilmDisplay'
 
 
@@ -28,8 +28,10 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <div>
-         {/* <FilmRequest/> */}
-         <FilmDisplay/>
+        <FilmDisplay/>
+        <br/>
+         <FilmRequest/>
+         
           {/* <Game/> */}
           {/* <Counter /> */}
           {/* <LoginControl/>

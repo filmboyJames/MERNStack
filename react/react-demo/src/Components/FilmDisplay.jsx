@@ -1,35 +1,44 @@
 import axios from 'axios';
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import FilmRequestOutput from './FilmRequestOutput';
 
 const FilmDisplay = () => {
 
-    const [movie, setMovie] = useState();
-    const [search, setSearch] = useState("Donnie Darko");
+    const [movie, setMovie] = useState('');
+    const [films, setFilms] = useState([]);
 
-    useEffect(() => {
-        const getMovie = async () => {
-            try {
-                const grab = await axios.get("http://www.omdbapi.com/?apikey=faab278&s=" + search);
-                console.log("RESPONSE: ", grab);
-                setMovie(grab.data);
-                console.log(grab.data);
-            } catch (err) {
-                console.error("This is an error");
-            }
+
+    const getMovie = async () => {
+        try {
+            const grab = await axios.get("http://www.omdbapi.com/?apikey=faab278&s=" + movie);
+            console.log("RESPONSE: ", grab);
+            setFilms(grab.data.Search);
+            console.log(grab.data);
+        } catch (err) {
+
         }
-        getMovie();
-    }, [search]);
+    }
 
     return (
         <>
-            
-            <label htmlFor="movieName">Name:</label>
-            <input type="text" id="movieName" value={search} onChange={e => setSearch(e.target.value)}/>
-            <FilmRequestOutput Title = {movie.Title} Year = {movie.Year} Rated = {movie.Rated} />
+
+            <label htmlFor="movieName">Name:
+            <input type="text" id="movieName" value={movie} onChange={e => setMovie(e.target.value)} />
+            <button type="button" onClick={getMovie}>SEARCH</button>
+            {
+                films.map((film) => (
+                    <FilmRequestOutput
+                        key={film.imdbID}
+                        title={film.Title}
+                        year={film.Year}
+                        poster={film.Poster}
+                        type={film.Type}
+                    />
+                ))
+            }
+            </label>
         </>
     )
-
 }
 
 export default FilmDisplay;
