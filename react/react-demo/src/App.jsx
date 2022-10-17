@@ -30,6 +30,8 @@ function App() {
         <div>
         <FilmDisplay/>
         <br/>
+        <br/>
+        <br/>
          <FilmRequest/>
          
           {/* <Game/> */}

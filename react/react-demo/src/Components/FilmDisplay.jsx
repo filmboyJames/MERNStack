@@ -22,7 +22,7 @@ const FilmDisplay = () => {
     return (
         <>
 
-            <label htmlFor="movieName">Name:
+            <label htmlFor="movieName">Name (multiple results possible):
             <input type="text" id="movieName" value={movie} onChange={e => setMovie(e.target.value)} />
             <button type="button" onClick={getMovie}>SEARCH</button>
             {
