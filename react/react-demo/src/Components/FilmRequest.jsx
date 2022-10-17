@@ -1,10 +1,10 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-const MovieRequest = () => {
+const FilmRequest = () => {
 
     const [movie, setMovie] = useState();
-    const [search, setSearch] = useState();
+    const [search, setSearch] = useState("The Matrix");
 
 
     useEffect(() => {
@@ -13,6 +13,7 @@ const MovieRequest = () => {
                 const grab = await axios.get("http://www.omdbapi.com/?apikey=faab278&t=" + search);
                 console.log("RESPONSE: ", grab);
                 setMovie(grab.data);
+                console.log(grab.data);
             } catch (err) {
 
             }
@@ -25,16 +26,17 @@ const MovieRequest = () => {
             <>
             <label htmlFor="movieName">Name:</label>
                 <input type="text" id="movieName" value={search} onChange={e => setSearch(e.target.value)} />
-                <h2>{movie.title}</h2>
-                <img style={{float: "left"}} src={movie.poster} alt="Poster"/>
+                {/* <button onClick={e => setSearch(e.target.value)}>Submit Search</button> */}
+                <h2>{movie.Title}</h2>
+                <img style={{float: "left"}} src={movie.Poster} alt="Poster"/>
                 <section>
-                    <p>Title: {movie.title}</p>
-                    <p>Year: {movie.year}</p>
-                    <p>Rated: {movie.rated}</p>
+                    <p>Title: {movie.Title}</p>
+                    <p>Year: {movie.Year}</p>
+                    <p>Rated: {movie.Rated}</p>
                 </section>
             </>
         );
     }
 }
 
-export default MovieRequest;
+export default FilmRequest;
