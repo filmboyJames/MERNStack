@@ -22,7 +22,6 @@ import './App.css'
 import SearchableList from './Components/States/SearchableList'
 
 function App () {
-
   return (
     <div className="App">
       <header className="App-header">
@@ -38,8 +37,6 @@ function App () {
           {/* <Game/> */}
           {/* <Counter /> */}
           {/* <LoginControl/>
-          
-          
           <Subcontent/>
           <Content/>
           <Form />
@@ -81,7 +78,7 @@ function App () {
         </a>
       </header>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

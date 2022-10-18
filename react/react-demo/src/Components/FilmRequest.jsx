@@ -1,28 +1,26 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
+import axios from 'axios'
+import { useEffect, useState } from 'react'
 
 const FilmRequest = () => {
+  const [movie, setMovie] = useState();
+  const [search, setSearch] = useState('The Matrix')
 
-    const [movie, setMovie] = useState();
-    const [search, setSearch] = useState("The Matrix");
+  useEffect(() => {
+    const getMovie = async () => {
+      try {
+        const grab = await axios.get("http://www.omdbapi.com/?apikey=faab278&t=" + search)
+        console.log("RESPONSE: ", grab)
+        setMovie(grab.data)
+        console.log(grab.data)
+      } catch (err) {
 
-
-    useEffect(() => {
-        const getMovie = async () => {
-            try {
-                const grab = await axios.get("http://www.omdbapi.com/?apikey=faab278&t=" + search);
-                console.log("RESPONSE: ", grab);
-                setMovie(grab.data);
-                console.log(grab.data);
-            } catch (err) {
-
-            }
         }
-        getMovie();
-    }, [search]);
+      }
+    getMovie()
+    }, [search])
 
     if (movie) {
-        return (
+      return (
             <>
             <label htmlFor="movieName">Name:</label>
                 <input type="text" id="movieName" value={search} onChange={e => setSearch(e.target.value)} />
@@ -35,8 +33,8 @@ const FilmRequest = () => {
                     <p>Rated: {movie.Rated}</p>
                 </section>
             </>
-        );
+      )
     }
 }
 
-export default FilmRequest;
+export default FilmRequest
