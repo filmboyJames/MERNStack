@@ -1,5 +1,5 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from './logo.svg'
+import './App.css'
 // import Person from './Components/Props/Person';
 // import Person1 from './Components/Props/Person1';
 // import MyComponent from './Components/Props/MyComponent';
@@ -17,23 +17,24 @@ import './App.css';
 // import LoginControl from './Components/Props/LoginControl';
 // import Game from './Components/States/Game'
 // import EmployeeInfo from './Request'
-import FilmRequest from './Components/FilmRequest'
-import FilmDisplay from './Components/FilmDisplay'
+// import FilmRequest from './Components/FilmRequest'
+// import FilmDisplay from './Components/FilmDisplay'
+import SearchableList from './Components/States/SearchableList'
 
-
-function App() {
+function App () {
 
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <div>
-        <FilmDisplay/>
-        <br/>
-        <br/>
-        <br/>
-         <FilmRequest/>
-         
+          <SearchableList/>
+          {/* <FilmDisplay />
+          <br />
+          <br />
+          <br />
+          <FilmRequest /> */}
+
           {/* <Game/> */}
           {/* <Counter /> */}
           {/* <LoginControl/>
