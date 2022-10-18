@@ -19,7 +19,7 @@ import './App.css'
 // import EmployeeInfo from './Request'
 // import FilmRequest from './Components/FilmRequest'
 // import FilmDisplay from './Components/FilmDisplay'
-import SearchableList from './Components/States/SearchableList'
+import ProductManager from './Components/States/ProductManager'
 
 function App () {
   return (
@@ -27,7 +27,7 @@ function App () {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <div>
-          <SearchableList/>
+          <ProductManager/>
           {/* <FilmDisplay />
           <br />
           <br />

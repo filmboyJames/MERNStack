@@ -1,6 +1,6 @@
 import { v4 as uuidv4 } from 'uuid'
 
-function Basket ({ items, search, removeBasketItem, key }) {
+function Basket ({ items, search, updateBasketItem, key }) {
   return (
         <>
         <h1>Basket</h1>
@@ -8,8 +8,9 @@ function Basket ({ items, search, removeBasketItem, key }) {
         items
           .map((item, i) =>
             <p key = {uuidv4()}>
-                {`${item}`}
-                <button type="button" onClick={removeBasketItem}>X</button>
+                {`${item} `}
+                <button type="button" onClick={updateBasketItem}>+1</button>
+                <button type="button" onClick={updateBasketItem}>-1</button>
             </p>
           )
 }
