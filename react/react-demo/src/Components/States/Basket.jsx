@@ -1,14 +1,18 @@
-function Basket(props) {
-    return(
+function Basket ({ items, search, removeBasketItem }) {
+  return (
         <>
-        <p>Basket</p>
+        <h1>Basket</h1>
         {
-        props
-        .filter((item) => item.toLowerCase().startsWith(search.toLowerCase()))
-        .map((item) => <p>{`${item}`}</p>)
+        items
+          .map((item, i) =>
+            <p>
+                {`${item}`}
+                <button type="button" onClick={removeBasketItem}>X</button>
+            </p>
+          )
 }
         </>
-    )
+  )
 }
 
 export default Basket
