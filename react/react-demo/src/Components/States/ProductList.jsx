@@ -1,12 +1,14 @@
-function ProductList ({ items, search }) {
+import { v4 as uuidv4 } from 'uuid'
+
+function ProductList ({ items, search, key }) {
   return (
           <>
-          <h1>ProductList</h1>
+          <h1>Product List</h1>
           {
           items
             .filter((item) => item.toLowerCase().startsWith(search.toLowerCase()))
             .map((item) =>
-              <p>{`${item}`}</p>
+              <p key = {uuidv4()}>{`${item}`}</p>
             )
   }
           </>
