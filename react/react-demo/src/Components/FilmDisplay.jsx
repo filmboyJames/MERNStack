@@ -3,21 +3,21 @@ import { useState } from 'react'
 import FilmRequestOutput from './FilmRequestOutput'
 
 const FilmDisplay = () => {
-  const [movie, setMovie] = useState('');
-  const [films, setFilms] = useState([]);
+  const [movie, setMovie] = useState('')
+  const [films, setFilms] = useState([])
 
-    const getMovie = async () => {
-        try {
-          const grab = await axios.get("http://www.omdbapi.com/?apikey=faab278&s=" + movie);
-          console.log("RESPONSE: ", grab);
-          setFilms(grab.data.Search);
-          console.log(grab.data);
-        } catch (err) {
+  const getMovie = async () => {
+    try {
+      const grab = await axios.get('http://www.omdbapi.com/?apikey=faab278&s=' + movie)
+      console.log('RESPONSE: ', grab)
+      setFilms(grab.data.Search)
+      console.log(grab.data)
+    } catch (err) {
 
-        }
     }
+  }
 
-    return (
+  return (
         <>
 
             <label htmlFor="movieName">Name (multiple results possible):
@@ -36,7 +36,7 @@ const FilmDisplay = () => {
             }
             </label>
         </>
-    )
+  )
 }
 
-export default FilmDisplay;
+export default FilmDisplay

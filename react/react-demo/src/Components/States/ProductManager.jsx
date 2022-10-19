@@ -27,12 +27,12 @@ function ProductManager () {
     cloneBasketItems.splice(index, 1)
     setBasketItems(cloneBasketItems)
   }
-  // To update basket
-  const updateBasketItem = (event) => {
-    event.preventDefault()
-    setBasketItems((currentItems) => [...currentItems, newBasketItem])
-    setNewBasketItem('')
-  }
+  // // To update basket
+  // const updateBasketItem = (event) => {
+  //   event.preventDefault()
+  //   setBasketItems((currentItems) => [...currentItems, newBasketItem])
+  //   setNewBasketItem('')
+  // }
 
   return (
         <>
