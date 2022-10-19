@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 // Single request search
 
 import axios from 'axios';

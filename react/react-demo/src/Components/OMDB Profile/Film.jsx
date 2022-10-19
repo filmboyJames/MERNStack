@@ -8,7 +8,7 @@ function Film({
 
       <h2>{title}</h2>
       <section>
-        <img style={{ float: 'left', width: '100px' }} src={poster} alt="Poster" />
+        <img style={{ float: 'left', width: '180px' }} src={poster} alt="Poster" />
         <p>
           Title:
           {' '}

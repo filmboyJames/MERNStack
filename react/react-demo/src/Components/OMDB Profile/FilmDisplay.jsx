@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+// Multi film search
 import axios from 'axios';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -22,7 +24,7 @@ function FilmDisplay() {
 
   return (
     <label htmlFor="movieName">
-      Name (multiple results possible):
+      Film Name (multiple results possible):
       <input type="text" id="movieName" value={movie} onChange={(e) => setMovie(e.target.value)} />
       <button type="button" onClick={getMovie}>SEARCH</button>
       {

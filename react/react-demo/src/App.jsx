@@ -8,10 +8,10 @@ import Converter from './Components/States/Converter';
 import LoginControl from './Components/Props/LoginControl';
 import Game from './Components/States/Game';
 import UserParams from './Components/Props/UserParams';
-import FilmRequest from './Components/FilmRequest';
-import FilmDisplay from './Components/FilmDisplay';
-import FilmDetails from './Components/FilmDetails';
-import ProductManager from './Components/States/ProductManager';
+import FilmRequest from './Components/OMDB Profile/FilmRequest';
+import FilmDisplay from './Components/OMDB Profile/FilmDisplay';
+import FilmDetails from './Components/OMDB Profile/FilmDetails';
+import ProductManager from './Components/States/Product Manager/ProductManager';
 import Navigation from './Components/Props/Navigation';
 import Hello from './Components/Props/Hello';
 
