@@ -3,31 +3,31 @@ import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 
 const EmployeeInfo = () => {
-    const [error, setError] = useState(null)
-    const [isLoaded, setIsLoaded] = useState(false)
-    const [items, setItems] = useState([])
+  const [error, setError] = useState(null)
+  const [isLoaded, setIsLoaded] = useState(false)
+  const [items, setItems] = useState([])
 
-    useEffect(() => {
-        axios
-            .get('http://dummy.restapiexample.com/api/v1/employees')
-            .then(res => res)
-            .then((result) => {
-                setIsLoaded(true)
-                setItems(result.data.data)
-            },
-            (error) => {
-                    setIsLoaded(true)
-                    setError(error)
-                }
-            )
-    }, [])
+  useEffect(() => {
+    axios
+      .get('http://dummy.restapiexample.com/api/v1/employees')
+      .then(res => res)
+      .then((result) => {
+        setIsLoaded(true)
+        setItems(result.data.data)
+      },
+      (error) => {
+        setIsLoaded(true)
+        setError(error)
+      }
+      )
+  }, [])
 
-    if (error) {
-        return <div>Error: {error.message}</div>
-    } else if (!isLoaded) {
-        return <div>Loading...</div>
-    } else {
-        return (
+  if (error) {
+    return <div>Error: {error.message}</div>
+  } else if (!isLoaded) {
+    return <div>Loading...</div>
+  } else {
+    return (
             <ul>
                 {console.log(items)}
                 {items.map((item) => (
@@ -36,8 +36,8 @@ const EmployeeInfo = () => {
                     </li>
                 ))}
             </ul>
-        )
-    }
+    )
+  }
 }
 
 export default EmployeeInfo
