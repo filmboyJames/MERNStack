@@ -1,7 +1,7 @@
 import ComponentWithProps from './ComponentWithProps'
 
 const MyComponent = () => {
-    return (
+  return (
         <>
         <h1>Hello Worlds?</h1>
         <p> Trying out empty tags</p>
@@ -12,7 +12,7 @@ const MyComponent = () => {
         nonexistent="Ghosts"
         />
         </>
-    )
+  )
 }
 
-export default MyComponent;
+export default MyComponent
