@@ -29,7 +29,9 @@ function FilmDisplay() {
         Film Name (multiple results possible):
         <input type="text" id="movieName" value={movie} onChange={(e) => setMovie(e.target.value)} />
       </label>
+      <br />
       <Button variant="info" type="button" onClick={getMovie}>SEARCH</Button>
+      <br />
       <Container>
         <div className="row row-cols-3 g-4">
           {

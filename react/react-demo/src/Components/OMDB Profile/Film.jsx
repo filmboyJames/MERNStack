@@ -5,13 +5,15 @@ function Film({
   title, poster, year, type,
 }) {
   return (
-    <Card>
-      <Card.Img src={poster} alt="Poster" />
+    <Card bg="dark">
+      <Card.Img variant="top" src={poster} alt="Poster" />
       <Card.Body>
         <Card.Title>{title}</Card.Title>
         <Card.Text>
-          {`Year: ${year}
-          Type: ${type}`}
+          {`Year: ${year}`}
+        </Card.Text>
+        <Card.Text>
+          {`Type: ${type}`}
         </Card.Text>
       </Card.Body>
     </Card>

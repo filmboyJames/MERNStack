@@ -1,5 +1,8 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {
+  Button, Row, Col, Container,
+} from 'react-bootstrap';
+import {
   BrowserRouter as Router, Link, Routes, Route,
 } from 'react-router-dom';
 import './App.css';
@@ -22,34 +25,43 @@ function App() {
       <header className="App-header">
         <Router>
           <Navigation />
-          <Link to="/OMDB">
-            <button type="button">OMDB</button>
-          </Link>
-          <Link to="/home">
-            <button type="button">Home</button>
-          </Link>
-          <Link to="/users/:id">
-            <button type="button">Users</button>
-          </Link>
-          <Link to="/contact">
-            <button type="button">Contact</button>
-          </Link>
-          <Link to="/404">
-            <button type="button">404</button>
-          </Link>
-          <Link to="/counter">
-            <button type="button">Counter</button>
-          </Link>
-          <Link to="/productmanager">
-            <button type="button">Product Manager</button>
-          </Link>
-          <Link to="/filmrequest">
-            <button type="button">Film Request</button>
-          </Link>
-          <Link to="/game">
-            <button type="button">Game</button>
-          </Link>
-          <h2>CONTENT:</h2>
+          <Container>
+            <Col>
+              <Link to="/home">
+                <Button>Home</Button>
+              </Link>
+              <Link to="/users/:id">
+                <Button>Users</Button>
+              </Link>
+              <Link to="/contact">
+                <Button>Contact</Button>
+              </Link>
+              <Link to="/404">
+                <Button>404</Button>
+              </Link>
+            </Col>
+
+            <Link to="/counter">
+              <Button>Counter</Button>
+            </Link>
+            <Link to="/productmanager">
+              <Button>Product Manager</Button>
+            </Link>
+            <Link to="/filmrequest">
+              <Button>Film Request</Button>
+            </Link>
+            <Link to="/game">
+              <Button>Game</Button>
+            </Link>
+            <Row>
+              <Col>
+
+                <Link to="/OMDB">
+                  <Button>OMDB</Button>
+                </Link>
+              </Col>
+            </Row>
+          </Container>
           <Routes>
             <Route path="/home" element={<Hello name="James" />} />
             <Route path="/users/:id" element={<UserParams />} />

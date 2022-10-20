@@ -6,7 +6,6 @@ function Hello(props) {
     <h1>
       Hello,
       {' '}
-      // eslint-disable-next-line react/destructuring-assignment
       {props.name}
     </h1>
   );
