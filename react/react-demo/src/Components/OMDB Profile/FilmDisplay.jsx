@@ -3,6 +3,7 @@
 import axios from 'axios';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Button, Col, Container } from 'react-bootstrap';
 import Film from './Film';
 
 function FilmDisplay() {
@@ -23,13 +24,17 @@ function FilmDisplay() {
   };
 
   return (
-    <label htmlFor="movieName">
-      Film Name (multiple results possible):
-      <input type="text" id="movieName" value={movie} onChange={(e) => setMovie(e.target.value)} />
-      <button type="button" onClick={getMovie}>SEARCH</button>
-      {
+    <>
+      <label htmlFor="movieName">
+        Film Name (multiple results possible):
+        <input type="text" id="movieName" value={movie} onChange={(e) => setMovie(e.target.value)} />
+      </label>
+      <Button variant="info" type="button" onClick={getMovie}>SEARCH</Button>
+      <Container>
+        <div className="row row-cols-3 g-4">
+          {
                 films.map((film) => (
-                  <div>
+                  <Col>
                     <Film
                       key={film.imdbID}
                       title={film.Title}
@@ -37,13 +42,17 @@ function FilmDisplay() {
                       poster={film.Poster}
                       type={film.Type}
                     />
-                    <button type="button" onClick={() => navigate(`/details/${film.imdbID}`)}>Details</button>
 
-                  </div>
+                    <Button variant="info" type="button" onClick={() => navigate(`/details/${film.imdbID}`)}>
+                      Details
+                    </Button>
+                  </Col>
 
                 ))
-            }
-    </label>
+}
+        </div>
+      </Container>
+    </>
   );
 }
 

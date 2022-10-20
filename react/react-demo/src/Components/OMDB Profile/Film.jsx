@@ -1,31 +1,20 @@
 import PropTypes from 'prop-types';
+import { Card } from 'react-bootstrap';
 
 function Film({
   title, poster, year, type,
 }) {
   return (
-    <>
-
-      <h2>{title}</h2>
-      <section>
-        <img style={{ float: 'left', width: '180px' }} src={poster} alt="Poster" />
-        <p>
-          Title:
-          {' '}
-          {title}
-        </p>
-        <p>
-          Year:
-          {' '}
-          {year}
-        </p>
-        <p>
-          Type:
-          {' '}
-          {type}
-        </p>
-      </section>
-    </>
+    <Card>
+      <Card.Img src={poster} alt="Poster" />
+      <Card.Body>
+        <Card.Title>{title}</Card.Title>
+        <Card.Text>
+          {`Year: ${year}
+          Type: ${type}`}
+        </Card.Text>
+      </Card.Body>
+    </Card>
   );
 }
 

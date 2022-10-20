@@ -1,9 +1,15 @@
-const Hello = props => {
+/* eslint-disable react/prop-types */
+/* eslint-disable react/destructuring-assignment */
+/* eslint-disable react/jsx-no-comment-textnodes */
+function Hello(props) {
   return (
-        <h1>
-            Hello, {props.name}
-        </h1>
-  )
+    <h1>
+      Hello,
+      {' '}
+      // eslint-disable-next-line react/destructuring-assignment
+      {props.name}
+    </h1>
+  );
 }
 
 // const PropComp = () => {
@@ -16,4 +22,4 @@ const Hello = props => {
 //     )
 // }
 
-export default Hello
+export default Hello;
