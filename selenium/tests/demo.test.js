@@ -16,7 +16,7 @@ describe("selenium tests", function () {
   // });
 
 
-  it("should find turtles", async () => {
+  it.skip("should find turtles", async () => {
     const driver = await new Builder().forBrowser("chrome").build();
     try {
       await driver.get("https://www.bbc.co.uk/search");
@@ -31,7 +31,7 @@ describe("selenium tests", function () {
     }
   })
 
-  it("should find a surprise", async () => {
+  it.skip("should find a surprise", async () => {
     const driver = await new Builder().forBrowser("chrome").build();
     try {
       driver.get("https://christophperrins.github.io/TestingSite/");
